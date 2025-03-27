@@ -29,7 +29,14 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-     return NULL;
+    List* newList = (List*) malloc(sizeof(List));
+    if (newList == NULL) return NULL; // Verificar si la asignación de memoria falló
+
+    newList->head = NULL;
+    newList->tail = NULL;
+    newList->current = NULL;
+    
+    return newList;
 }
 
 void * firstList(List * list) {
